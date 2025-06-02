@@ -1,0 +1,34 @@
+<!-- Kevin Clouse - Assignment 3.2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=""UTF-8">
+    <title>Secure Message</title>
+    <link rel="stylesheet" href="strings.css">
+</head>
+<body>
+    <h1>Welcome to the Secure THUNDER DOME Vault</h1>
+
+    <!-- Form collects all inputs at once -->
+    <form id="userForm" onsubmit="return validateInput()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" /><br />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" /><br />
+
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" /><br />
+
+        <button type="submit">Unlock Secret..</button>
+    </form>
+
+    <!-- Message divs for feedback -->
+    <div id="message"></div>
+    <div id="secretMessage"></div>
+
+    <!-- JS file link -->
+    <script src="strings.js"></script>
+</body>
+</html>
