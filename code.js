@@ -10,7 +10,7 @@ function playGame() {
     const prize = Math.floor(Math.random() * 3) + 1;
     let output = "";
 
-    // Determine outcome
+    // Determine outcome based on prize number
     if (prize === 1) {
         output = generateMessage("Glory Skull");
     } else if (prize === 2) {
