@@ -16,27 +16,46 @@
             <h1>Welcome to my CSC102 THUNDER DOME Home Page</h1>
         <!-- create a nav sectiom to hold the the menu -->
             <nav>
-                <a href="index.html">Home</a>
-                <br>
+                <a href="index.html">Home</a><br>
                 <a href="boards.html">Boards</a>
             </nav>
         </header>
 
-        <!-- p is for paragraph tag ; has spacing around it by default -->
-        <p>
-            <!-- img is the image tag -->
-            <img id="memeImgae" src="Meme 1.jpg">
+        <!-- <p> is for paragraph tag ; has spacing around it by default -->
+       <p class="intro-text">
+        This is my home page for the CSC102 class at UAT. This page is a work in progress, so please check back often.
         </p>
+        <p class="intro-text">
+        Click the Start button to start the meme moving around the page. Click the Stop button to stop the meme.
+        </p>
+        <!-- Main meme image, already centered with CSS -->
 
+        <!-- Main interactive content goes here -->
+        <div id="mainContent" style="position:relative; min-height:600px; height:600px; margin-left:200px;">
+            <!-- Control buttons for the meme movement -->
+            <div id="btnArea">
+                <!-- Start button (calls startMove when clicked) -->
+                <button id="startBtn" onclick="startMove()" type="button">Start</button>
+                <!-- Stop button (calls stopMove when clicked) -->
+                <button id="stopBtn" onclick="stopMove()" type="button" disabled>Stop</button> 
+            </div>
+
+            <!-- Meme image (positioned absolutely, moves between buttons and footer) -->
+            <img id="memeImage" src="Meme1.jpg" alt="Meme Image"> 
+
+            <!-- Container for feedback messages (innerHTML will be used if needed) -->
+            <!-- Feedback message area (optional, for move/stop messages) -->
+            <div id="msgArea"></div>
+        </div>
+
+        <!-- Place the footer *after* everything else inside <body>, so it's the last element before </body> -->
         <footer>
-            <strong>B. Kevin Clouse Jr. 05/29/2025</strong>
-            <br>
-            University of Advancing Technology
-            <br>
-            2625 W Baseline Rd
-            <br>
-            Tempe, AZ 85283
-            <br>
+            <strong>B. Kevin Clouse Jr. 06/11/2025</strong><br>
+            University of Advancing Technology<br>
+            2625 W Baseline Rd<br>
+            Tempe, AZ 85283<br>
         </footer>
+        <!-- Import the movement script -->
+        <script src="moveMeme.js"></script>      
     </body>
  </html>

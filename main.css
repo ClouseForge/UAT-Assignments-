@@ -1,18 +1,41 @@
 /* 
 declaration block:
-
 selector{
     property: value;
     property2: value2;
 }
 */
 
-body{
-    background-color: rgb(137, 141, 141);
-    color: black;
+html, body {
+    height: 100%;
 }
 
-nav{
+/* Style the entire body */
+body {
+    min-height: 100vh;
+    background-color: rgb(137, 141, 141);
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style intro text */
+.intro-text {
+    text-align: center;
+    color: #01447e;
+    font-size: 1.25em;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eaf6ff;
+    border-radius: 10px;
+    margin: 0 auto 16px auto;
+    max-width: 650px;
+    padding: 18px 26px 14px 26px;
+    box-shadow: 0 2px 12px 0 #b8e1ff55;
+    letter-spacing: 0.01em;
+}
+
+/* Navigation on the left */
+nav {
     height: 100px;
     width: 200px;
     float: left;
@@ -20,18 +43,52 @@ nav{
     line-height: 30px;
 }
 
-footer{
+/* Main content container */
+#mainContent {
+    position: relative;
+    min-height: 600px;
+    height: 600px; /* <-- guaranteed enough room for meme! */
+    margin-left: 200px;
+    background: none;
+}
+
+#btnArea {
+    width: 100%;
+    height: 70px;
     text-align: center;
-    margin-right: 20px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
 }
 
-#memeImgae{
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
+/* The meme image styling */
+#memeImage {
+    position: absolute;
+    max-width: 300px;
+    min-width: 120px;
+    width: 15vw;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 10px #00e6e6;
+    z-index: 5;
+    left: 50px;
+    top: 120px;
 }
 
+#msgArea {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 12px 0;
+    background: none;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+/* Center all h1 headers */
 h1{
     text-align: center;
 }
