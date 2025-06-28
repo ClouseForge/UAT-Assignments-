@@ -1,33 +1,84 @@
-<!-- Author: Kevin Clouse - CSC102 Assignment 5.1 -->
+<!-- 
+ CSC102 Assignment 6.1: 
+ Incorporate Sound Author: Kevin Clouse Description: 
+ Base structure for the Thunderdome Sound Showdown webpage 
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
+        <!-- Set the character encoding for the document -->
         <meta charset="UTF-8">
-        <title>The THUNDERDOME Palindrome Checker of SKULL CRUSHER</title>
-        <!-- Custom font from Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-        <!-- Link to external CSS file -->
+    
+        <!-- Page title shown in browser tab -->
+        <title>THUNDERDOME Sound Showdown</title>
+    
+        <!-- Link to external CSS stylesheet -->
         <link rel="stylesheet" href="main.css">
     </head>
 
     <body>
-        <div class="container">
-            <h1>The THUNDERDOME Palindrome Checker of SKULL CRUSHER</h1>
+        <!-- Background ambient loop -->
+        <audio id="scary_sound" src="sounds/scary_sound.wav" autoplay loop></audio>
+        <!-- Page header with main title and intro -->
+        <header>
+            <h1>Welcome to the THUNDERDOME Sound Showdown!</h1>
+            <p>Click the buttons to hear your fate!</p>
+        </header>
 
-            <!-- Form for user input -->
-            <form id="palindromeForm">
-                <label for="inputText">Enter a word or phrase:</label><br>
-                <input type="text" id="inputText" name="inputText" required><br>
-                <input type="submit" value="Check Palindrome">
-            </form>
+        <!-- Main section for interaction -->
+        <main>
+            <!-- Button that plays 'witness' sound -->
+            <button id="btn-witness">Witness Me!</button>
+            <!-- Button that plays 'chrome' sound -->
+            <button id="btn-chrome">Shiny & Chrome</button>
+            <!-- Button that plays 'immortan' sound -->
+            <button id="btn-immortan">I Live, I Die, I Live Again!</button>
+        </main>
 
-            <!-- Area to display result using innerHTML -->
-            <div id="result"></div>
-        </div>
+        <!-- Audio elements for each sound -->
+        <audio id="witness" src="sounds/witness_me.wav"></audio>
+        <audio id="chrome" src="sounds/shiny_chrome.wav"></audio>
+        <audio id="immortan" src="sounds/live_die_live.wav"></audio>
 
-        <!-- Link to external JS file (no functions in HTML!) -->
-        <script src="thunderdome-palindrome.js"></script>
+        <!-- JavaScript function to play audio -->
+        <script>
+            // Play or pause sound based on current state
+            function playSound(soundId) {
+                const audio = document.getElementById(soundId);
+                if (audio.paused) {
+                    audio.currentTime = 0;
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            }
+
+             // Attach sound actions to button clicks using JavaScript
+            document.addEventListener("DOMContentLoaded", function () {
+                // Listen for each button click
+                document.getElementById("btn-witness").addEventListener("click", function () {
+                    playSound("witness");
+                });
+
+                document.getElementById("btn-chrome").addEventListener("click", function () {
+                    playSound("chrome");
+                });
+
+                document.getElementById("btn-immortan").addEventListener("click", function () {
+                    playSound("immortan");
+                });
+            // Activate background audio on first interaction
+            document.body.addEventListener("click", function startBGSound() {
+                const bgSound = document.getElementById("scary_sound");
+                if (bgSound && bgSound.paused) {
+                    bgSound.volume = 0.1;
+                    bgSound.play();
+                }
+                document.body.removeEventListener("click", startBGSound);
+            });
+            });
+        </script>
     </body>
-
 </html>
