@@ -1,0 +1,43 @@
+<!-- Author: Kevin Clouse - CSC102 Assignment 6.2 -->
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!-- Meta and page settings -->
+    <meta charset="UTF-8">
+    <title>The THUNDERDOME Palindrome Checker of SKULL CRUSHER</title>
+
+    <!-- Import a custom Google Font for style -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Link to external stylesheet for layout and design -->
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Outer container for page layout and styling -->
+    <div class="container">
+        <!-- Main heading -->
+        <h1>The THUNDERDOME Palindrome Checker of SKULL CRUSHER</h1>
+
+            <!-- Form to collect user input for palindrome checking -->
+            <form id="palindromeForm">
+                <!-- Input label -->
+                <label for="inputText">Enter a word or phrase:</label><br>
+
+                <!-- Text input field -->
+                <input type="text" id="inputText" name="inputText" required><br>
+
+                <!-- Submit button -->
+                <input type="submit" value="Check Palindrome">
+            </form>
+
+        <!-- Output area for results (uses innerHTML) -->
+        <div id="result"></div>
+    </div>
+
+    <!-- Link to external JavaScript file (no inline functions allowed) -->
+    <script src="thunderdome-palindrome.js"></script>
+</body>
+
+</html>
